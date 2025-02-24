@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Navigation from "@/components/navigation";
 import Searchbox from "@/components/searchbox";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +32,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen py-2">
           <main className="flex flex-col items-center flex-1 px-4 sm:px-20">
             <Navigation />
-
-            <div className="flex flex-wrap items-center justify-around max-w-4xl my-8 sm:w-full bg-white rounded-md shadow-xl h-full border border-gray-100">
-              <Searchbox />
+            <div className="flex flex-wrap items-center justify-around max-w-4xl my-8 sm:w-full bg-white rounded-md shadow-md h-full border border-gray-100">
               {children}
             </div>
           </main>
