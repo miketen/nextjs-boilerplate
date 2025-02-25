@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "@/components/navigation";
+import { ErrorBoundary } from "react-error-boundary";
 import "./globals.css";
+import ErrorMessage from "@/components/error-message";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +34,9 @@ export default function RootLayout({
           <main className="flex flex-col items-center flex-1 px-4 sm:px-20">
             <Navigation />
             <div className="flex flex-wrap items-center justify-around max-w-4xl my-8 sm:w-full bg-white rounded-md shadow-md h-full border border-gray-100">
-              {children}
+              <ErrorBoundary fallback={<ErrorMessage />}>
+                {children}
+              </ErrorBoundary>
             </div>
           </main>
         </div>

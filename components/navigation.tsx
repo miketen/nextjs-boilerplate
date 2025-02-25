@@ -10,7 +10,7 @@ export default function Navigation() {
     <div className="w-full block flex-grow flex lg:items-center">
       <div className="text-lg">
         <Link href="/" className={`block mt-4 inline-block text-black hover:font-semibold mr-4 ${pathname === '/' ? 'font-semibold' : ''}`}>
-          Home
+          Giphy
         </Link>
         <Link href="/weather" className={`block mt-4 inline-block text-black hover:font-semibold mr-4  ${pathname === '/weather' ? 'font-semibold' : ''}`}>
           Weather
