@@ -1,5 +1,4 @@
 import { Result } from "@/app/types";
-import Image from 'next/image';
 
 interface Props {
     results: Result[];
