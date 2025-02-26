@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+## Project Overview
+This web application allows you to search two sites; Giphy and AccuWeather.
+
+**Giphy** can be found on the home page(/) and the **AccuWeather** search can be found on /weather path.
+
+Use the navigation bar and click on the links to navigate back-forth from each page.
+
 ## Getting Started
 
 First, run the development server:
