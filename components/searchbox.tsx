@@ -4,9 +4,10 @@ import { useState } from "react";
 
 interface Props {
   handleSubmit: (query:string) => void;
+  numbersOnly?: boolean;
 }
 
-export default function Searchbox({handleSubmit}:Props) {
+export default function Searchbox({handleSubmit, numbersOnly=false}:Props) {
   const [isSearchQueryEmpty, setIsSeachQueryEmpty] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -30,7 +31,7 @@ export default function Searchbox({handleSubmit}:Props) {
 
   return (
   <div className="relative">
-    <input maxLength={50} onChange={handleSearch} className="pl-3 pr-28 py-3 mt-1 text-lg block w-full border border-gray-200 rounded-md text-gray-900 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-300" placeholder="" type="text" name="search box"></input>
+    <input type={numbersOnly ? "number": "text"} maxLength={50} onChange={handleSearch} className="pl-3 pr-28 py-3 mt-1 text-lg block w-full border border-gray-200 rounded-md text-gray-900 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-300" placeholder="" name="search box"></input>
     <button onClick={validateInput} className="flex items-center justify-center absolute right-2 top-2 px-4 h-10 text-lg border bg-black text-white rounded-md w-24 focus:outline-none focus:ring focus:ring-blue-300 focus:bg-gray-800" type="submit">Search</button>
     {isSearchQueryEmpty && <p className="text-sm font-semibold text-red-500">Text required to perform a search.</p>}
   </div>);

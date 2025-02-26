@@ -27,7 +27,7 @@ export default function Weather() {
   return (
     <div className="w-full my-8 mx-8">
       <p className="text-base">Search for the daily forecast using your USA postal code.</p>
-      <Searchbox handleSubmit={onSubmit} />
+      <Searchbox numbersOnly={true} handleSubmit={onSubmit} />
       {isPending && <p className="flex justify-center text-lg my-4">Thinking...</p>}
       {forecast?.cityname && <ForecastDetails forecast={forecast} />}
     </div>
