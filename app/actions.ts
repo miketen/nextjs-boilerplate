@@ -27,7 +27,7 @@ export async function getWeatherDetails(postalcode:string) {
         const forecastData = await forcastResp.json();
 
         return {ok: true, postalcode: PrimaryPostalCode, cityname: EnglishName, DailyForecasts: forecastData.DailyForecasts};
-
+    // eslint-disable-next-line
     } catch(error:any) {
         console.error(error.message);
         return {ok: false, error: error.message};
