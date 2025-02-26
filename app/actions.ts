@@ -3,7 +3,7 @@ import { WEATHER_API_KEY } from "./constants";
 
 export async function getWeatherDetails(postalcode:string) {
     try {
-        const locationResp = await fetch(`http://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${WEATHER_API_KEY}&q=${postalcode}`);
+        const locationResp = await fetch(`https://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${WEATHER_API_KEY}&q=${postalcode}`);
 
         if (!locationResp.ok) {
             throw new Error(`HTTP Request Error! status: ${locationResp.status}`);
@@ -18,7 +18,7 @@ export async function getWeatherDetails(postalcode:string) {
         }
 
         const {Key, PrimaryPostalCode, EnglishName} = locationData[0];
-        const forcastResp = await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${Key}?apikey=${WEATHER_API_KEY}`);
+        const forcastResp = await fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/1day/${Key}?apikey=${WEATHER_API_KEY}`);
 
         if (!forcastResp.ok) {
             throw new Error(`HTTP Request Error! status: ${forcastResp.status}`);
