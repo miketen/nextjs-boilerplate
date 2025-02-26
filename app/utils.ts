@@ -13,7 +13,8 @@ export function parseGiphyResponse(data:any) {
     });
 }
 
-
+// Note: explicitly set to any type to time constraints
+// eslint-disable-next-line
 export function parseForecastResponse(data:any):ForecastResponse {
     const forcast = data.DailyForecasts[0];
 
@@ -25,7 +26,6 @@ export function parseForecastResponse(data:any):ForecastResponse {
         night: forcast.Night,
     };
 }
-
 
 export function formatWeatherIconNumber(iconNumber:number) {
     if (iconNumber >= 0 && iconNumber < 10) {
